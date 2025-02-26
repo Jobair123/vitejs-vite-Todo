@@ -1,21 +1,26 @@
-Create todolist.jsx file
+Frontend (React)
+
+Create todolist.jsx
 Add todolist.css
-Add input field and button
-Define state & arrow function
-Mappning the list array
-Test the result
-Make api with laravel
-Create a laravel project
-Update env (dbname: todo_db)
-Create db, named: (todo_db)
+Implement input field and button
+Define state & functions
+Map and display the list
+Test the React frontend
+Backend (Laravel)
+
+Create a new Laravel project
+Configure .env file (set database to todo_db)
+Create todo_db in MySQL
 Create a migration for the tasks table
-In the generated migration file, define the schema for the tasks table
-Run migrate command
-Create a task model
-Create controller to handle the crud operation
-In controller , add method to handle crud operation
-Return response
-Define api route
-Connect frontend and backend
-Test the result
+Define schema in migration file
+Run migration
+Create Task model
+Create TaskController for CRUD operations
+Implement API methods in the controller
+Define API routes
+Connect React frontend with Laravel backend
+Test everything
+Version Control & Documentation
+
+Create a README.md for Git
 
