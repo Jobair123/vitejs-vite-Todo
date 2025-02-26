@@ -1,10 +1,22 @@
-import { useState } from "react"
+import { useState,useEffect  } from "react"
 import './Todo.css'
+import axios from 'axios';
 
 export default function Todolist(){
   const[tasks,settasks] =useState([])
 const[task,settask] = useState("")
 const [warning,setwarning] =useState(false)
+
+useEffect(() => {
+    axios.get('http://localhost:8000/api/tasks')
+        .then(response => {
+            settasks(response.data);
+        })
+        .catch(error => {
+            console.error('There was an error fetching the tasks!', error);
+        });
+}, []);
+
 
   const addhandle=(ev)=>{
     
@@ -25,7 +37,7 @@ const [warning,setwarning] =useState(false)
         body: JSON.stringify({ name: task }),
       });
       const newTask = await response.json();
-      settasks([...tasks, newTask.name]);
+      settasks([...tasks, newTask]);
       setwarning(false);
     }
     
@@ -40,17 +52,22 @@ const [warning,setwarning] =useState(false)
     setwarning(false)
     
   }
+
+ 
 return(
   <div>
     <h1>TOdo</h1>
     <input className="container" type="text" placeholder="enter task" onChange={(e)=>addhandle(e.target.value)} />
     <button type="submit" onClick={handleclick}>ADD</button>
+
+
+
    {warning && <p style={{color:"red"}}>Task already exists.</p>}
    <ol>
     {
       tasks.map((item,index)=>(
          <h4>
-         <li key={index}>{item}
+         <li key={index}>{item.name}
             <button onClick={()=>removehandle(index)}> X</button></li> 
             </h4>
             
