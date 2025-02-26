@@ -1,14 +1,14 @@
-Frontend (React)
+**Frontend (React)**
 
-Create todolist.jsx
-Add todolist.css
+* Create todolist.jsx
+ Add todolist.css
 Implement input field and button
 Define state & functions
 Map and display the list
 Test the React frontend
 Backend (Laravel)
 
-Create a new Laravel project
+* Create a new Laravel project
 Configure .env file (set database to todo_db)
 Create todo_db in MySQL
 Create a migration for the tasks table
@@ -22,5 +22,5 @@ Connect React frontend with Laravel backend
 Test everything
 Version Control & Documentation
 
-Create a README.md for Git
+* Create a README.md for Git
 
